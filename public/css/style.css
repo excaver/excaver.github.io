@@ -18,7 +18,47 @@
   font-family: "Century Gothic", Arial, Helvetica, sans-serif;
 }
 
-nav, nav .navbar-menu, nav .navbar-menu ul, .jumbotron .overlay-text, .about .about-item {
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ======================= Illustration ======================
+*/
+
+.illustration {
+  width: 100%;
+  position: relative;
+  bottom: 4rem;
+  padding: 0;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.illustration img {
+  width: 100%;
+  height: auto;
+}
+
+.illustration-show {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+  bottom: 0rem;
+}
+
+/* ======================== Navbar ===========================
+*/
+.navbar, .navbar .navbar-menu, 
+.navbar .navbar-menu ul, .jumbotron .overlay-text, 
+.about .about-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,14 +72,7 @@ nav, nav .navbar-menu, nav .navbar-menu ul, .jumbotron .overlay-text, .about .ab
   width: 100%;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-nav {
+.navbar {
   z-index: 1;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -53,92 +86,66 @@ nav {
   position: fixed;
   top: 0;
   padding: 0rem 0rem;
+  transition: background-color 0.25s;
 }
 
-nav .navbar-brand {
+.navbar .navbar-brand {
   width: 100%;
   padding: 1rem 0 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  position: relative;
   text-align: center;
 }
 
-nav .navbar-brand .logo {
+.navbar .navbar-brand .logo {
   height: 32px;
 }
 
-nav .navbar-menu {
+.navbar .navbar-menu {
   height: 100%;
   width: 100%;
 }
 
-nav .navbar-menu ul {
+.navbar .navbar-menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-nav .navbar-menu ul li {
+.navbar .navbar-menu ul li {
   width: 100%;
   padding: 1.5rem 0;
   text-align: center;
 }
 
-nav .navbar-menu ul li a {
+.navbar .navbar-menu ul li a {
   height: 100%;
   color: white;
   text-decoration: none;
 }
 
-nav .navbar-menu ul li a:hover {
-  color: white;
+.navbar .navbar-menu ul li a:hover {
   font-weight: bold;
 }
 
-nav .navbar-menu ul li .active {
-  font-weight: bold;
-  color: white;
-}
-
-.nav-scroll {
-  background-color: black;
-  -webkit-box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.2);
-}
-
-.nav-scroll .navbar-menu ul li a {
-  color: gray;
-}
-
-.nav-scroll .navbar-menu ul li a:hover {
-  color: white;
-  font-weight: bold;
-}
-
-.nav-scroll .navbar-menu ul li .active {
-  font-weight: bold;
-  color: white;
-}
 
 @media only screen and (min-width: 768px) {
-  nav {
+  .navbar {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     padding: 0 6rem;
   }
-  nav .navbar-menu {
+  .navbar .navbar-menu {
     width: 40%;
   }
-  nav .navbar-brand {
+  .navbar .navbar-brand {
     width: auto;
     padding: 0;
   }
 }
 
+/* ======================== Container ==========================
+*/
 .container {
   padding: 0 2rem;
 }
@@ -149,6 +156,8 @@ nav .navbar-menu ul li .active {
   }
 }
 
+/* ======================== Jumbotron ==========================
+*/
 .jumbotron {
   background-image: url("../img/city.jpg");
   height: 100%;
@@ -188,7 +197,7 @@ nav .navbar-menu ul li .active {
 }
 
 .jumbotron .overlay-text h1 {
-  font-size: 3vmax;
+  font-size: 3.5vmax;
   width: 60%;
   position: relative;
   animation: jumbotitle 1s reverse;
@@ -216,64 +225,123 @@ nav .navbar-menu ul li .active {
   }
 }
 
-.about {
-  margin: 2rem 0;
+@media only screen and (min-width: 768px) {
+  .jumbotron .overlay-text h1 {
+    font-size: 2.5vmax;
+  }
 }
 
-.about .about-item {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+/* ================= Ordering Procedure ==================
+*/
+.ordering-guide {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.about .about-item .illustration {
+#ordering-guide {
+  margin: 30px 0;
+}
+
+.ordering-guide * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ordering-guide ul {
+  list-style: none;
+}
+
+.ordering-guide .ordering-guide-image {
+  margin-top: 70px;
+  min-width: 250px;
+  max-width: 250px;
+  display: none;
+}
+
+.ordering-guide .ordering-guide-image img {
   width: 100%;
+}
+
+.ordering-guide .ordering-guide-content h1 {
+  font-size: 3.5vmax;
+  padding: 20px;
+  text-align: center;
+}
+
+.dd-item-title {
+  border-bottom: 2px solid #00A5FF;
+}
+
+.dd-item-title button {
+  background-color: white;
+  text-align: left;
+
+  border: none;
+  width: 100%;
+  padding: 15px;
+
   position: relative;
-  bottom: 4rem;
-  padding: 0;
-  opacity: 0;
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 
-.about .about-item .illustration img {
-  width: 100%;
-  padding: 4rem 0;
-  height: auto;
+.dd-item-title button:hover {
+  cursor: pointer;
 }
 
-.about .about-item .illustration-show {
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 1;
-  bottom: 0rem;
+.dd-item-title .dd-item-title-numbering {
+  border-radius: 50%;
+  padding: 0 6px;
+  margin-right: 5px;
+  background-color: #00A5FF;
+  color: white;
+  font-weight: bold;
 }
 
-.about .about-item .description {
-  width: 100%;
-  padding: 0;
+.dd-item-title .dd-item-title-plus {
+  position: absolute;
+  font-weight: bold;
+  right: 20px;
 }
 
-@media only screen and (min-width: 768px) {
-  .about .about-item .illustration {
-    width: 50%;
-    padding: 0 4rem;
-  }
-  .about .about-item .description {
-    width: 50%;
-    padding: 0 4rem;
-  }
+.dd-item-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s;
+  background-color: #E6E6E6;
+}
+
+.dd-item-content p {
+  margin: 20px;
 }
 
 @media only screen and (min-width: 768px) {
-  .about .reversed {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+  .ordering-guide-content {
+    margin: 20px;
+    max-width: 600px;
+  }
+
+  .ordering-guide .ordering-guide-image {
+    display: block;
+  }
+
+  .ordering-guide .ordering-guide-content h1 {
+    font-size: 2.5vmax;
   }
 }
 
+/* ====================== Service ========================
+*/
 .service {
+  margin-top: 70px;
+}
+
+.service-section-title {
+  font-size: 3.5vmax;
+  text-align: center;
+}
+
+.service-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,13 +355,13 @@ nav .navbar-menu ul li .active {
           align-items: stretch;
 }
 
-.service .service-col {
+.service-container .service-col {
   width: 100%;
   height: auto;
   margin: 1rem 0;
 }
 
-.service .service-col .service-item {
+.service-container .service-col .service-item {
   height: 100%;
   border: 1px solid #d1d8e0;
   text-align: center;
@@ -309,60 +377,66 @@ nav .navbar-menu ul li .active {
           justify-content: space-between;
 }
 
-.service .service-col .service-item .service-content .service-image {
+.service-container .service-col .service-item .service-content .service-image {
   height: 8rem;
   margin: 2rem 0;
 }
 
-.service .service-col .service-item .service-content .service-image img {
+.service-container .service-col .service-item .service-content .service-image img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.service .service-col .service-item .service-content .service-text {
+.service-container .service-col .service-item .service-content .service-text {
   padding: 0 2rem;
   margin: 2rem 0 2rem;
 }
 
-.service .service-col .service-item .service-content .service-text .service-title {
+.service-container .service-col .service-item .service-content .service-text .service-title {
   margin: 1rem 0 0;
   display: block;
   font-weight: bold;
 }
 
-.service .service-col .service-item .service-content .service-text .service-desc {
+.service-container .service-col .service-item .service-content .service-text .service-desc {
   margin: 1rem 0 0;
   text-align: left;
   display: block;
 }
 
-.service .service-col .service-item .service-button {
+.service-container .service-col .service-item .service-button {
   width: 100%;
   margin: auto 0 1rem;
   text-align: center;
 }
 
-.service .service-col .service-item .service-button button {
+.service-container .service-col .service-item .service-button button {
   background-color: white;
   border: 1px solid black;
   color: black;
   padding: 1rem;
 }
 
-.service .service-col .service-item .service-button button:hover {
+.service-container .service-col .service-item .service-button button:hover {
   background-color: black;
   color: white;
   outline: none;
 }
 
 @media only screen and (min-width: 768px) {
-  .service .service-col {
+  .service-section-title {
+    font-size: 2.5vmax;
+  }
+  .service-container .service-col {
     width: 33.33%;
   }
-  .service .service-col .service-item {
+  .service-container .service-col .service-item {
     margin: 0 1rem;
   }
 }
+
+/* ====================== Footer ============================
+*/
 
 .footer {
   background-color: black;
