@@ -25,14 +25,14 @@ body {
   height: 100%;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* ======================= Illustration ======================
 */
 
-.illustration {
+.animated {
   width: 100%;
   position: relative;
   bottom: 4rem;
@@ -42,12 +42,12 @@ html {
   transition: 1s;
 }
 
-.illustration img {
+/* .illustration img {
   width: 100%;
   height: auto;
-}
+} */
 
-.illustration-show {
+.animated-fadein {
   -webkit-transition: 1s;
   transition: 1s;
   opacity: 1;

@@ -24,12 +24,10 @@ window.addEventListener("load", function () {
 		}
 
 		// menampilkan ilustrasi ketika scroll
-		var illustration = document.querySelectorAll(".illustration");
+		var illustration = document.querySelectorAll(".animated");
 		illustration.forEach(function (pic) {
 			if (window.pageYOffset >= pic.offsetTop - window.innerHeight / 2) {
-				pic.classList.add("illustration-show");
-			} else {
-				pic.classList.remove("illustration-show");
+				pic.classList.add("animated-fadein");
 			}
 		});
 	});
