@@ -1,0 +1,190 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Excaver adalah startup pengembangan bisnis dengan sistem talented freelancer pertama di Indonesia. Daftarkan dan sukseskan bisnis Anda sekarang!" />
+        <link rel="stylesheet" href="public/css/normalize.css" />
+
+        <!-- Pada production, gunakan style-minified.css 
+             Sementara pada development, gunakan style.css
+        -->
+        <link rel="stylesheet" href="public/css/style-minified.css" />
+
+        <link rel="icon" type="image/png" href="public/img/favicon.png" />
+        <title>Excaver</title>
+
+        <script src="public/js/script.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <img class="logo" src="public/img/logo.png" alt="Excaver" />
+                </div>
+                <div class="navbar-menu">
+                    <a href="#" class="nav-link-toggler" id="nav-link-toggler">&#8801;</a>
+                    <ul class="nav-link-container" id="nav-link-container">
+                        <li><a class="nav-link" href="./index.html#">Beranda</a></li>
+                        <li><a class="nav-link" href="./index.html#about-us">Tentang</a></li>
+                        <li><a class="nav-link" href="./index.html#ordering-guide">Panduan</a></li>
+                        <li>
+                            <a class="nav-link" href="./news.html">Events</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Agar .news tidak tertutup oleh navbar -->
+            <div class="news-clear"></div> 
+            
+            <div class="news">
+                <h1 class="news-section-title">
+                    Up<span class="make-blue">com</span>ing Events<span class="make-blue">!</span>
+                </h1>
+
+                <!-- Salah satu di antara .news-no-item dan 
+                     .news-item-container harus ada yang memiliki 
+                     id="hide" agar elemen tidak ditampilkan.
+
+                     (Tetapi tidak boleh keduanya secara sekaligus).
+                  -->
+
+                <p class="news-no-item-p" id="hide">
+                    Wah, tidak ada event yang sedang/akan berlangsung nih
+                </p>
+
+                <div class="news-items-container">
+                    <div class="news-item">
+                        <h3 class="news-item-title">Pembukaan Lowongan Talent</h3>
+                        <div class="news-item-content">
+                            <div class="news-item-image">
+                                <img src="public/img/feed1.png" alt="Hiring Talents">
+                            </div>
+                            <p>
+                                Kami membuka pendaftaran talent media kreatif dan pengembangan IT.
+                                Pendaftaran dapat dilaksanakan dengan mengirim CV terkait ke surel
+                                manager.kreatif@excaver.co atau ke manager.it@excaver.co. See you soon, talents!
+                                (14 Juni 2020 - 21 Juni 2020)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-clear"></div>
+
+                    <div class="news-item">
+                        <h3 class="news-item-title">Kami Mencari Early Client!</h3>
+                        <div class="news-item-content">
+                            <div class="news-item-image">
+                                <img src="public/img/feed2.png" alt="Early Clients">
+                            </div>
+                            <p>
+                                Excaver akan mengumpulkan pebisnis hebat yang siap mengembangkan 
+                                usahanya ke level yang lebih tinggi dengan menerapkan teknologi.
+                                Jadilah early client kami dan dapatkan penawaran menarik 
+                                dari Excaver khusus untuk Anda. Untuk info lebih lanjut hubungi surel 
+                                contact@excaver.co. Looking forward for our relations!!!
+                                (21 Juni 2020 - 28 Juni 2020)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-clear"></div>
+
+                    <div class="news-item">
+                        <h3 class="news-item-title">Grand Launching, wohoo!</h3>
+                        <div class="news-item-content">
+                            <div class="news-item-image">
+                                <img src="public/img/feed3.png" alt="Grand Launching">
+                            </div>
+                            <p>
+                                Excaver akan mengadakan konferensi online hebat dengan para pebisnis UMKM
+                                dan teman-teman antusias bisnis terkait. Pastikan jangan kelewatan ya! Akan 
+                                ada banyak penawaran menarik di dalamnya yang pastinya hanya berlaku untuk
+                                partisipan. Stay tuned!
+                                (1 Juli 2020) 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-clear"></div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="container">
+                    <div class="list-container">
+                        <div class="list-col">
+                            <span class="list-heading">Pelayanan</span>
+                            <ul class="list-content">
+                                <li>
+                                    <a href="https://wa.me/6285900361422">
+                                        Analisis Bisnis
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://wa.me/6282134021050">
+                                        Konsultasi Bisnis
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://wa.me/6285713447476">
+                                        Pengiklanan
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        Media Kreatif
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://wa.me/6281226916189">
+                                        Pengembangan IT
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list-col">
+                            <span class="list-heading">Ikuti Kami</span>
+                            <ul class="list-content">
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/company/excaver-net/"
+                                        >LinkedIn</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://m.facebook.com/Excaver-Company-108262727486285/?ref=bookmarks"
+                                        >Facebook</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="http://www.instagram.com/excavercompany/"
+                                        >Instagram</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="brand">
+                        <div class="logo">
+                            <img src="public/img/logo.png" alt="Excaver" />
+                        </div>
+                        <div class="final-tagline">
+                            Excaver adalah perusahaan startup yang membantu
+                            para pebisnis dalam mengembangkan usahanya di era digital.
+                        </div>
+                        <div class="copy">
+                            Copyright © 2020 Excaver. All rights reserved.
+                        </div>
+                        <div class="address">
+                            Alamat :Jl. Ir. Sutami No.36 A, Kentingan, Surakarta
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end footer -->
+        </div>
+    </body>
+</html>

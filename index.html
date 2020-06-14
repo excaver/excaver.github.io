@@ -4,7 +4,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Excaver adalah startup pengembangan bisnis dengan sistem talented freelancer pertama di Indonesia. Daftarkan dan sukseskan bisnis Anda sekarang!" />
         <link rel="stylesheet" href="public/css/normalize.css" />
+
+        <!-- Pada production, gunakan style-minified.css 
+             Sementara pada development, gunakan style.css
+        -->
         <link rel="stylesheet" href="public/css/style-minified.css" />
+
         <link rel="icon" type="image/png" href="public/img/favicon.png" />
         <title>Excaver</title>
 
@@ -19,11 +24,14 @@
                 <div class="navbar-menu">
                     <a href="#" class="nav-link-toggler" id="nav-link-toggler">&#8801;</a>
                     <ul class="nav-link-container" id="nav-link-container">
-                        <li><a class="nav-link" href="#">Beranda</a></li>
-                        <li><a class="nav-link" href="#about-us">Tentang</a></li>
-                        <li><a class="nav-link" href="#ordering-guide">Panduan</a></li>
+                        <li><a class="nav-link" href="./index.html#">Beranda</a></li>
+                        <li><a class="nav-link" href="./index.html#about-us">Tentang</a></li>
                         <li>
-                            <a class="nav-link" href="#services">Pelayanan</a>
+                            <a class="nav-link" href="./index.html#ordering-guide">
+                            Panduan</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="./news.html">Events</a>
                         </li>
                     </ul>
                 </div>
@@ -33,9 +41,9 @@
                 <div class="overlay-text">
                     <div class="container">
                         <h1>
-                            Bergabung dengan
-                            Excaver sekarang dan dapatkan penawaran gratis konsultasi
-                            bisnis dan analisis bisnis Anda!
+                            Bergabung dengan Excaver sekarang dan dapatkan 
+                            penawaran gratis konsultasi bisnis dan analisis 
+                            bisnis Anda!
                         </h1>
                     </div>
                 </div>
@@ -50,11 +58,14 @@
 
                     <div class="about-us-content">
                         <h4>
-                            Excaver didirikan
-                            sebagai upaya agar bisnis Anda dapat terus menggali peluang kedepan. Kami terbagi menjadi divisi analisis, divisi konsultasi,
-                            divisi pengiklanan, divisi media kreatif, dan divisi pengembangan IT.
-                            Excaver akan menghubungkan Anda dengan talenta-talenta <span class="make-blue">terkualifikasi</span> pada 5 divisi tersebut yang didedikasikan penuh untuk
-                            mengurus keperluan bisnis Anda. 
+                            Excaver didirikan sebagai upaya agar bisnis Anda dapat 
+                            terus menggali peluang kedepan. Kami terbagi menjadi divisi 
+                            analisis, divisi konsultasi, divisi pengiklanan, divisi 
+                            media kreatif, dan divisi pengembangan IT. Excaver akan 
+                            menghubungkan Anda dengan talenta-talenta
+                            <span class="make-blue">terkualifikasi</span> pada 5 
+                            divisi tersebut yang didedikasikan penuh untuk mengurus 
+                            keperluan bisnis Anda. 
                         </h4>
                     </div>
                 </div><!-- end of .about-us -->
@@ -72,8 +83,8 @@
                                         <span class="dd-item-title-plus" id="plus-1">+</span>
                                     </button></li>
                                 <li class="dd-item-content"><p>
-                                    Langkah awal yang dapat Anda lakukan adalah menghubungi manager kami via 
-                                    WhatsApp pada menu pelayanan. 
+                                    Langkah awal yang dapat Anda lakukan adalah menghubungi 
+                                    manager kami via WhatsApp pada menu pelayanan.
                                     </p></li>
                             </ul>
                             <ul class="dd-item-container">
@@ -101,17 +112,18 @@
                                         <span class="dd-item-title-plus" id="plus-4">+</span>
                                     </button></li>
                                 <li class="dd-item-content"><p>
-                                    Setelah pemilihan layanan terkonfirmasi, pelayanan dapat dilakukan
-                                    sampai Anda mendapatkan hasil yang diinginkan.
+                                    Setelah pemilihan layanan terkonfirmasi, pelayanan 
+                                    dapat dilakukan sampai Anda mendapatkan hasil yang 
+                                    diinginkan.
                                     </p></li>
                             </ul>
                         </div>
                     </div>
                 </div><!-- end of .ordering-guide -->
 
-                <div class="service" id="services">
+                <div class="service">
                     <h1 class="service-section-title animated">Pelayanan</h1> 
-                    <div class="service-container">   
+                    <div class="service-container" id="services">   
                         <div class="service-col animated">
                             <div class="service-item">
                                 <div class="service-content">
@@ -123,14 +135,16 @@
                                             Analisis Bisnis
                                         </div>
                                         <div class="service-desc">
-                                            Kami menyediakan analisis perusahaan secara komprehensif dari segi keuangan,
-                                            analisis kemampuan kompetitif, dan analisis kinerja manajemen. Anda cukup melampirkan
-                                            laporan keuangan dan profil perusahaan sebagai bahan analisis kami.
+                                            Kami menyediakan analisis perusahaan secara komprehensif 
+                                            dari segi keuangan,analisis kemampuan kompetitif, dan 
+                                            analisis kinerja manajemen. Anda cukup melampirkan 
+                                            laporan keuangan dan profil perusahaan sebagai bahan 
+                                            analisis kami.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="service-button">
-                                    <a href="https://wa.me/6285900361422?text=menu">
+                                    <a href="https://wa.me/6285900361422">
                                         <button>Kontak (Deas)</button>
                                     </a>
                                 </div>
@@ -149,14 +163,15 @@
                                         </div>
                                         <div class="service-desc">
                                             Kami konsultan bisnis dapat membantu Anda dalam
-                                            perancangan strategi bisnis baik jangka panjang maupun pendek, 
-                                            memberikan solusi terhadap permasalahan bisnis,  
-                                            serta membimbing Anda menjadi pebisnis profesional.
+                                            perancangan strategi bisnis baik jangka panjang 
+                                            maupun pendek, memberikan solusi terhadap permasalahan 
+                                            bisnis, serta membimbing Anda menjadi pebisnis 
+                                            profesional.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="service-button">
-                                    <a href="https://wa.me/6282134021050?text=menu">
+                                    <a href="https://wa.me/6282134021050">
                                         <button>Kontak (Thoriq)</button>
                                     </a>
                                 </div>
@@ -175,13 +190,15 @@
                                         </div>
                                         <div class="service-desc">
                                             Kami siap memfasilitasi pengiklanan produk Anda.
-                                            Beragam pilihan harga tersedia dan dapat disesuaikan dengan keinginan.
-                                            Kami menyediakan pengiklanan di TV, radio, cinema bioskop, media digital, majalah, serta di media pengiklanan lainnya.
+                                            Beragam pilihan harga tersedia dan dapat disesuaikan 
+                                            dengan keinginan. Kami menyediakan pengiklanan di TV, 
+                                            radio, cinema bioskop, media digital, majalah, serta 
+                                            di media pengiklanan lainnya.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="service-button">
-                                    <a href="https://wa.me/6285713447476?text=menu">
+                                    <a href="https://wa.me/6285713447476">
                                         <button>Kontak (Zalza)</button>
                                     </a>
                                 </div>
@@ -199,8 +216,7 @@
                                             Media Kreatif
                                         </div>
                                         <div class="service-desc">
-                                            Divisi kami siap
-                                            dalam menangani proyek videografi,
+                                            Divisi kami siap dalam menangani proyek videografi,
                                             fotografi, hingga desain grafis yang Anda perlukan.
                                         </div>
                                     </div>
@@ -224,8 +240,9 @@
                                             Pengembangan IT
                                         </div>
                                         <div class="service-desc">
-                                            Kami siap membuatkan Anda sebuah website bisnis profesional
-                                            yang ditangani oleh para programmer handal.
+                                            Kami siap membuatkan Anda sebuah website bisnis 
+                                            profesional yang ditangani oleh para programmer 
+                                            handal.
                                         </div>
                                     </div>
                                 </div>

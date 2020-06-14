@@ -1,17 +1,33 @@
 window.addEventListener("load", function () {
+
+	/**
+	 * Agar ilustrasi langsung ditampilkan ketika ter-redirect
+	 * ke bagian yang beranimasi tanpa perlu scroll terlebih
+	 * dahulu.
+	 */
+	let illustration = document.querySelectorAll(".animated");
+	illustration.forEach(function (pic) {
+		if (window.pageYOffset >= pic.offsetTop - window.innerHeight / 1.5) {
+			pic.classList.add("animated-fadein");
+		}
+	});
+
+	/**
+	 * Variabel-variabel terkait navbar 
+	 */
+	let navLinkContainer = document.getElementById("nav-link-container");
+	let navLinkContainerHeight = "175px";
+	let navLinkContainerToggler = document.getElementById("nav-link-toggler");
+	let isNavlinkShowed = false;
+
 	/**
 	 * Menampilkan dropdown link-link pada navbar 
 	 */
-	let isNavlinkShowed = false;
-	let navLinkToggler = document.getElementById("nav-link-toggler");
-	
-	navLinkToggler.addEventListener("click", function(event) {
+	navLinkContainerToggler.addEventListener("click", function(event) {
 		event.preventDefault();
 
-		let navLinkDropdown = document.getElementById("nav-link-container");
-
 		if (isNavlinkShowed) {
-			navLinkDropdown.style["max-height"] = null;
+			navLinkContainer.style["max-height"] = null;
 			isNavlinkShowed = false;
 		} else {
 			// Ukuran asli kurang dari 175px. Disini digunakan ukuran
@@ -19,21 +35,28 @@ window.addEventListener("load", function () {
 			// ukuran konten di dalamnya 
 			//
 			// (untuk menghindari ukuran yang spesifik)
-			navLinkDropdown.style["max-height"] = "175px";
+			navLinkContainer.style["max-height"] = navLinkContainerHeight;
 			isNavlinkShowed = true;	
 		}	
 	});
 
 	/**
 	 * Scroll otomatis ke bagian tertentu sesuai dengan
-	 * link yang diklik
+	 * link yang diklik.
 	 */
-	let navLink = document.querySelectorAll(".nav-link");
-	navLink.forEach(function (link) {
+	let navbar = document.querySelector(".navbar");
+	let navbarHeight = navbar.clientHeight;
+	let navLinks = document.querySelectorAll(".nav-link");
+
+	navLinks.forEach(function (link) {
 		link.addEventListener("click", function () {
-			var nav = document.querySelector(".navbar");
 			setTimeout(function () {
-				window.scrollBy(0, -nav.clientHeight);
+				window.scrollBy(0, -navbarHeight);
+
+				// (mobile) menutup navbar setelah salah satu
+				// link diklik 
+				navLinkContainer.style["max-height"] = null;
+				isNavlinkShowed = false;
 			}, 0);
 		});
 	});
@@ -58,9 +81,9 @@ window.addEventListener("load", function () {
 		 * Menampilkan ilustrasi ketika scroll hingga titik
 		 * tertentu
 		 */
-		let illustration = document.querySelectorAll(".animated");
+		//let illustration = document.querySelectorAll(".animated");
 		illustration.forEach(function (pic) {
-			if (window.pageYOffset >= pic.offsetTop - window.innerHeight / 2) {
+			if (window.pageYOffset >= pic.offsetTop - window.innerHeight / 1.5) {
 				pic.classList.add("animated-fadein");
 			}
 		});

@@ -25,15 +25,35 @@ body {
     height: 100%;
 }
 
-/* Bisa dihilangkan jika terdapat masalah
+/* Bisa dihilangkan jika terdapat masalah */
+/*
 html {
     scroll-behavior: smooth;
-} */
+}
+*/
 
 .make-blue {
     color: #00A5FF;
 }
 
+.float-clear {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#hide {
+    display: none;
+}
+/*
+.scroll-hook {
+    content: "";
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    background-color: red;
+}
+*/
 /* ============================================================
  *                          Animasi
  * ============================================================
@@ -369,7 +389,10 @@ html {
 }
 
 .about-us {
-    padding: 2rem 0;
+    /* Agar ketika diklik, bagian ini tidak terpotong
+     * tampilannya oleh navbar.
+     */
+    padding-top: 5rem;
 
     /* Membuat seluruh isi dari about-us
      * berjajar ke bawah
@@ -413,7 +436,7 @@ html {
 }
 
 .about-us .about-us-content h3 {
-    font-size: 5vmax;
+    font-size: 3.75vmax;
     text-align: center;
 }
 
@@ -425,7 +448,7 @@ html {
     }
 
     .about-us .about-us-title h1 {
-        /* Ukuran tulisan dikecilkan */
+        /* Proporsi ukuran tulisan dikecilkan */
         font-size: 2.5vmax;
     }
 
@@ -434,8 +457,8 @@ html {
     }
 
     .about-us .about-us-content h3 {
-        /* Ukuran tulisan dikecilkan */
-        font-size: 4.5vmax;
+        /* Proporsi ukuran tulisan dikecilkan */
+        font-size: 3.5vmax;
     }
 }
 
@@ -445,7 +468,8 @@ html {
         padding: 0 5rem;
     }
     .about-us .about-us-content h3 {
-        font-size: 4vmax;
+        /* Proporsi ukuran tulisan dikecilkan lagi */
+        font-size: 3vmax;
     }
 }
 
@@ -458,10 +482,14 @@ html {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
 
-#ordering-guide {
-    margin: 30px 0;
+    /* Padding atas dilebarkan.
+     *
+     * Agar ketika link pada navbar yang mengarah ke
+     * bagian ini diklik, scroll tidak tertutup oleh
+     * navbar.
+     */
+    padding-top: 6rem;
 }
 
 /* Penerapan sedikit reset style css untuk beberapa
@@ -683,6 +711,7 @@ html {
     background-color: black;
     color: white;
     outline: none;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -808,4 +837,161 @@ html {
         flex-direction: row-reverse;
     }
 }
+
+/* ============================================================
+ *                            News
+ * ============================================================
+ */
+
+/**
+ * Catatan:
+ *  1. Karena website belum menggunakan sistem backend, maka diperlukan 
+ *     penanganan manual dalam penentuan bagian mana yang perlu untuk
+ *     di-display, di antara kedua elemen ini: 
+ *         
+ *         a. Tulisan "tidak ada acara" (.news-no-item-p)
+ *         b. List dari acara-acara yang ada (.news-items-container)
+ *
+ *     Berikan id="hide" pada elemen yang ingin disembunyikan. Salah
+ *     satu (tetapi tidak keduanya) harus memiliki id ini.
+ */
+
+.news * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Agar bagian .news tidak tertutupi oleh 
+ * navbar
+ */
+.news-clear {
+    height: 4rem;
+}
+
+.news {
+    min-height: 50vh;
+    padding: 2rem 1rem;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/* Untuk tulisan yang ditampilkan apabila tidak
+ * terdapat event sama sekali.
+ */
+.news-no-item-p {
+    margin-top: 5rem;
+    padding: 0 1rem;
+}
+
+.news-items-container {
+    /*background-color: #00A5FF;*/
+    margin-top: 3rem;
+    width: 100%;
+
+    padding: 0 1rem;
+}
+
+.news-item {
+    margin-bottom: 25px;
+}
+.news-item:last-of-type {
+    margin-bottom: 0;
+}
+
+.news-item .news-item-title {
+    margin-bottom: 5px;
+}
+
+.news-item .news-item-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.news-item .news-item-content .news-item-image {
+    width: 200px;
+    margin: 5px;
+}
+
+.news-item .news-item-content .news-item-image img {
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 768px) {
+    /* Agar bagian .news tidak tertutupi oleh 
+     * navbar
+     */
+    .news-clear {
+        height: 4.5rem;
+    }
+
+    .news {
+        min-height: 70vh;
+    }
+
+    .news-no-item-p {
+    }
+
+    .news-items-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .news-item {
+        padding: 10px;
+        padding-left: 20px; 
+
+        /* Mengubah lebar tiap item menjadi tidak 
+         * fluid seperti yang ada pada mobile-view.
+         */
+        width: 600px;
+
+        /* Garis biru di sebelah kiri tiap news
+         * item.
+         */
+        border-left: 3px solid #00A5FF;
+
+        /* Pengaturan animasi ketika posisi mouse hover */
+        transition: left 0.5s, box-shadow 0.25s;
+        position: relative;
+        left: -1rem;
+    }
+    .news-item:hover {
+        left: 0;
+        box-shadow: 4px 5px #CCC;
+    }
+
+    .news-item .news-item-content {
+        flex-flow: row;
+        padding: 10 0px;
+    }
+
+    .news-item .news-item-content .news-item-image {
+        /* Karena efek dari flex-flow milik .news-item-content,
+         * ukuran gambar menjadi lebih kecil. Maka width disini 
+         * perlu diperbesar.
+         *
+         * (mungkin ada solusi lain?)
+         */
+        width: 500px;
+
+        margin-right: 20px;
+    }
+}
+
+/* Untuk ukuran layar yang besar (desktop) */
+@media only screen and (min-width: 1104px) {
+    .news-item {
+        /* Menambah ukuran lebar .news-item ketika
+         * layar lebih besar lagi.
+         */
+        width: 750px;
+    }
+}
+
 /*# sourceMappingURL=style.css.map */
