@@ -83,7 +83,7 @@ window.addEventListener("load", function () {
 		 */
 		//let illustration = document.querySelectorAll(".animated");
 		illustration.forEach(function (pic) {
-			if (window.pageYOffset >= pic.offsetTop - window.innerHeight / 1.5) {
+			if (window.pageYOffset >= pic.offsetTop - window.innerHeight / 1.2) {
 				pic.classList.add("animated-fadein");
 			}
 		});
